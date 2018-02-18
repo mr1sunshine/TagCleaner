@@ -13,10 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\FilesStorage">
+      <UniqueIdentifier>{5cff52e4-beda-4fca-9e99-1dec83b5c010}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\FilesStorage\FilesStorage.cpp">
+      <Filter>Source Files\FilesStorage</Filter>
+    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\FilesStorage\FilesStorage.h">
+      <Filter>Source Files\FilesStorage</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

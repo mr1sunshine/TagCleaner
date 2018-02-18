@@ -1,3 +1,5 @@
+#include "FilesStorage\FilesStorage.h"
+
 #include <boost/program_options.hpp>
 
 #include <iostream>
@@ -13,7 +15,7 @@ int main(int argc, char* argv[])
         desc.add_options()
             ("help,h", "print usage message")
             ("path,p", po::value<std::string>(), "specify path where to do cleanup")
-            ("recursive,r", "specify if search should be recursive")
+            ("recursively,r", "specify if search should be recursive")
             ;
 
         po::variables_map vm;
@@ -25,6 +27,11 @@ int main(int argc, char* argv[])
             std::cout << desc << "\n";
             return 1;
         }
+
+        const bool recursively = vm.count("recursive");
+        const auto path = vm.at("path").as<std::string>();
+
+        TagCleaner::FilesStorage files(path, recursively);
 
     }
     catch (std::exception& e)
