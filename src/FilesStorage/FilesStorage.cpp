@@ -1,5 +1,7 @@
 #include "FilesStorage.h"
 
+#include <boost\algorithm\string.hpp>
+
 #include <experimental\filesystem>
 #include <iostream>
 
@@ -43,4 +45,9 @@ void TagCleaner::FilesStorage::AddFileIfRegular(const std::string & file)
 {
     if (fs::is_regular_file(file))
         AddFile(file);
+}
+
+bool TagCleaner::FilesStorage::FileIsMP3(const std::string & path) const
+{
+    return boost::algorithm::iends_with(path, "mp3");
 }

@@ -25,5 +25,7 @@ namespace TagCleaner
         void AddFilesFromDirectory(const std::string &path, bool recursively);
         void AddFile(const std::string &file);
         void AddFileIfRegular(const std::string &file);
+
+        bool FileIsMP3(const std::string &path) const;
     };
 }
