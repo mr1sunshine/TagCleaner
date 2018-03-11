@@ -32,7 +32,6 @@ int main(int argc, char* argv[])
         const auto path = vm.at("path").as<std::string>();
 
         TagCleaner::FilesStorage files(path, recursively);
-
     }
     catch (std::exception& e)
     {
