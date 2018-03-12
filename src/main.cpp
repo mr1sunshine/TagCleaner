@@ -30,7 +30,13 @@ int main(int argc, char* argv[])
         }
 
         const bool recursively = vm.count("recursive");
-        const auto path = vm.at("path").as<std::string>();
+        const auto path = [&]()
+        {
+            if (vm.count("path"))
+                return vm.at("path").as<std::string>();
+
+            return std::string(".");
+        }();
 
         TagCleaner::FilesStorage files(path, recursively);
 

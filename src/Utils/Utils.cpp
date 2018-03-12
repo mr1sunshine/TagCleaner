@@ -2,15 +2,7 @@
 
 std::uint32_t TagCleaner::Utils::ArrayToUint(const std::array<char, sizeof(std::uint32_t)> array)
 {
-    std::uint32_t ret = 0;
+    const std::uint32_t ret = (array[0] << 24) | (array[1] << 16) | (array[2] << 8) | (array[3]);
 
-    size_t i = 0;
-    for (; i < sizeof(ret); ++i)
-    {
-        ret |= array[i];
-        ret <<= 8;
-    }
-
-    ret |= array[i];
     return ret;
 }

@@ -16,6 +16,8 @@ namespace TagCleaner
                 UNKNOWN
             };
 
+            static std::string TypeToStr(Type type);
+
             static constexpr size_t HEADER_TAG_FIELD_POSITION = 0;
             static constexpr size_t HEADER_TAG_FIELD_LENGTH = 3;
             static constexpr size_t HEADER_VERSION_FIELD_POSITION = HEADER_TAG_FIELD_POSITION + HEADER_TAG_FIELD_LENGTH;
@@ -39,6 +41,12 @@ namespace TagCleaner
             Header(const Header&&) = delete;
             Header& operator=(const Header&) = delete;
             Header& operator=(const Header&&) = delete;
+
+            Type GetType() const;
+            int GetVersion() const;
+            int GetRevision() const;
+
+            std::uint32_t GetTagSize() const;
 
         private:
             static constexpr const char *FILE_IDENTIFIER_ID3 = "ID3";
