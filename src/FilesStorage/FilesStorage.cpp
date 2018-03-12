@@ -11,10 +11,7 @@ TagCleaner::FilesStorage::FilesStorage(const std::string & path, bool recursive)
     m_path(path),
     m_recursive(recursive)
 {
-    for (const auto &entry : fs::directory_iterator(path))
-    {
-        std::cout << entry << "\n";
-    }
+    AddFilesFromDirectory(path, recursive);
 }
 
 const std::vector<std::string>& TagCleaner::FilesStorage::GetFiles() const
@@ -27,12 +24,20 @@ void TagCleaner::FilesStorage::AddFilesFromDirectory(const std::string & path, b
     if (recursively)
     {
         for (const auto &entry : fs::recursive_directory_iterator(path))
-            AddFileIfRegular(entry.path().string());
+        {
+            const auto &filename = entry.path().string();
+            if (FileIsMP3(filename))
+                AddFileIfRegular(filename);
+        }
     }
     else
     {
         for (const auto &entry : fs::directory_iterator(path))
-            AddFileIfRegular(entry.path().string());
+        {
+            const auto &filename = entry.path().string();
+            if (FileIsMP3(filename))
+                AddFileIfRegular(filename);
+        }
     }
 }
 

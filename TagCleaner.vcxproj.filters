@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{b5cd0450-efb8-4270-aae9-0cd1b7490bcf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Processor">
+      <UniqueIdentifier>{a593ba4a-829d-4070-9bf7-2230e330f0eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\FilesStorage\FilesStorage.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="src\Utils\Utils.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="src\Processor\Processor.cpp">
+      <Filter>Source Files\Processor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FilesStorage\FilesStorage.h">
@@ -52,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="src\Utils\Utils.h">
       <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Processor\Processor.h">
+      <Filter>Source Files\Processor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -131,12 +131,14 @@
     <ClCompile Include="src\ID3V2\Header.cpp" />
     <ClCompile Include="src\ID3V2\Tag.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Processor\Processor.cpp" />
     <ClCompile Include="src\Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FilesStorage\FilesStorage.h" />
     <ClInclude Include="src\ID3V2\Header.h" />
     <ClInclude Include="src\ID3V2\Tag.h" />
+    <ClInclude Include="src\Processor\Processor.h" />
     <ClInclude Include="src\Utils\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,4 +1,5 @@
 #include "FilesStorage\FilesStorage.h"
+#include "Processor\Processor.h"
 
 #include <boost/program_options.hpp>
 
@@ -32,6 +33,9 @@ int main(int argc, char* argv[])
         const auto path = vm.at("path").as<std::string>();
 
         TagCleaner::FilesStorage files(path, recursively);
+
+        TagCleaner::Processor processor;
+        processor.ExecuteClean(files);
     }
     catch (std::exception& e)
     {
