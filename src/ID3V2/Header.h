@@ -8,16 +8,7 @@ namespace TagCleaner
     {
         class Header
         {
-        public:
-
-            enum class Type
-            {
-                ID3,
-                UNKNOWN
-            };
-
-            static std::string TypeToStr(Type type);
-
+        private:
             static constexpr size_t HEADER_TAG_FIELD_POSITION = 0;
             static constexpr size_t HEADER_TAG_FIELD_LENGTH = 3;
             static constexpr size_t HEADER_VERSION_FIELD_POSITION = HEADER_TAG_FIELD_POSITION + HEADER_TAG_FIELD_LENGTH;
@@ -28,6 +19,17 @@ namespace TagCleaner
             static constexpr size_t HEADER_FLAGS_FIELD_LENGTH = 1;
             static constexpr size_t HEADER_SIZE_FIELD_POSITION = HEADER_FLAGS_FIELD_POSITION + HEADER_FLAGS_FIELD_LENGTH;
             static constexpr size_t HEADER_SIZE_FIELD_LENGTH = 4;
+
+        public:
+
+            enum class Type
+            {
+                ID3,
+                UNKNOWN
+            };
+
+            static std::string TypeToStr(Type type);
+
             static constexpr size_t HEADER_LENGTH = HEADER_TAG_FIELD_LENGTH +
                                                     HEADER_VERSION_FIELD_LENGTH +
                                                     HEADER_REVISION_FIELD_LENGTH +
