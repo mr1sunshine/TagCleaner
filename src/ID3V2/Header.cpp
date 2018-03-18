@@ -27,7 +27,8 @@ std::string TagCleaner::ID3V2::Header::TypeToStr(Type type)
 
 TagCleaner::ID3V2::Header::Header(const std::array<char, HEADER_LENGTH> header_data)
 {
-    if (std::string(header_data.begin(), header_data.begin() + HEADER_TAG_FIELD_LENGTH) == FILE_IDENTIFIER_ID3)
+    if (std::string(header_data.begin() + HEADER_TAG_FIELD_POSITION,
+                    header_data.begin() + HEADER_TAG_FIELD_LENGTH) == FILE_IDENTIFIER_ID3)
         m_type = Type::ID3;
 
     m_version = header_data.at(HEADER_VERSION_FIELD_POSITION);
@@ -37,7 +38,7 @@ TagCleaner::ID3V2::Header::Header(const std::array<char, HEADER_LENGTH> header_d
 
     std::array<char, HEADER_SIZE_FIELD_LENGTH> size_data;
     std::copy(header_data.begin() + HEADER_SIZE_FIELD_POSITION, header_data.end(), size_data.begin());
-    m_size = TagCleaner::Utils::ArrayToUint(size_data) & 0x3FFFFFFF;
+    m_size = TagCleaner::Utils::ArrayToUint32(size_data) & 0x3FFFFFFF;
 }
 
 TagCleaner::ID3V2::Header::Type TagCleaner::ID3V2::Header::GetType() const

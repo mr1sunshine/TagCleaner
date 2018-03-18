@@ -45,6 +45,9 @@
     <ClCompile Include="src\Processor\Processor.cpp">
       <Filter>Source Files\Processor</Filter>
     </ClCompile>
+    <ClCompile Include="src\ID3V2\Frame.cpp">
+      <Filter>Source Files\ID3V2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FilesStorage\FilesStorage.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="src\Processor\Processor.h">
       <Filter>Source Files\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ID3V2\Frame.h">
+      <Filter>Source Files\ID3V2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
